@@ -4,197 +4,361 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- SEO 與 分享標題 -->
   <title>MinMin & Oliver 的香港迪士尼奇幻冒險紀錄</title>
   <meta name="description" content="記錄 115 年 8 月 20 日至 8 月 21 日，MinMin 與 Oliver 在香港迪士尼樂園與飯店的夢幻童話之旅！">
 
   <!-- 載入 Tailwind CSS 樣式庫與 Google 字體 -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;800;900&family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
   
   <style>
-    body { font-family: 'Noto Sans TC', sans-serif; }
+    body { 
+      font-family: 'Noto Sans TC', sans-serif; 
+      background: linear-gradient(180deg, #38bdf8 0%, #7dd3fc 35%, #bae6fd 70%, #f0f9ff 100%);
+      min-height: 100vh;
+    }
     
-    /* 迪士尼魔法夜空背景 */
-    .disney-hero-bg {
-      background: radial-gradient(circle at center, #1e1b4b 0%, #090d16 100%);
+    .font-disney {
+      font-family: 'Fredoka', 'Noto Sans TC', sans-serif;
     }
 
-    /* 金黃夢幻標題漸層 */
-    .gold-gradient {
-      background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    /* 夢幻白雲背景裝飾 */
+    .cloud-bg {
+      background-image: 
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0) 45%),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 40%),
+        radial-gradient(circle at 50% 80%, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 50%);
+    }
+
+    /* 夢幻七彩半透明泡泡樣式 */
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 192, 203, 0.4) 30%, rgba(135, 206, 250, 0.4) 60%, rgba(221, 160, 221, 0.4) 90%);
+      box-shadow: inset -5px -5px 12px rgba(255, 255, 255, 0.6), 
+                  inset 5px 5px 12px rgba(255, 182, 193, 0.5), 
+                  0 8px 20px rgba(56, 189, 248, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      pointer-events: none;
+      animation: floatUp linear infinite;
+    }
+
+    /* 泡泡高光點 */
+    .bubble::after {
+      content: '';
+      position: absolute;
+      top: 18%;
+      left: 22%;
+      width: 25%;
+      height: 25%;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.85);
+      filter: blur(1px);
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(105vh) translateX(0) scale(0.8);
+        opacity: 0;
+      }
+      10% { opacity: 0.85; }
+      90% { opacity: 0.85; }
+      100% {
+        transform: translateY(-15vh) translateX(40px) scale(1.1);
+        opacity: 0;
+      }
+    }
+
+    /* 迪士尼經典亮黃金光漸層 */
+    .disney-gold-text {
+      background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #fcd34d 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    /* 滑鼠移動產生的魔法白光軌跡 */
-    .glow-dot {
+    /* 滑鼠移動互動生成的小七彩泡泡 */
+    .cursor-bubble {
       position: fixed;
       pointer-events: none;
       z-index: 9999;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(244, 208, 63, 0.8) 40%, rgba(255,255,255,0) 100%);
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.9), 0 0 22px rgba(245, 158, 11, 0.6);
-      animation: dotFade 0.6s ease-out forwards;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9) 0%, rgba(244, 114, 182, 0.4) 40%, rgba(56, 189, 248, 0.4) 70%, rgba(251, 191, 36, 0.4) 100%);
+      box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      animation: cursorBubbleFade 0.7s ease-out forwards;
       user-select: none;
     }
-    @keyframes dotFade {
-      0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-      100% { opacity: 0; transform: translate(-50%, -50%) scale(0.2); }
+
+    @keyframes cursorBubbleFade {
+      0% {
+        opacity: 0.9;
+        transform: translate(-50%, -50%) scale(0.5);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -80px) scale(1.3);
+      }
     }
   </style>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased selection:bg-amber-500 selection:text-black">
+<body class="text-slate-700 antialiased selection:bg-amber-400 selection:text-slate-900 relative overflow-x-hidden">
 
-  <!-- 頂部童話導覽列 -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-indigo-900/50 shadow-2xl">
+  <!-- 背景飄浮七彩泡泡容器 -->
+  <div id="bubble-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
+
+  <!-- 頂部官網風格導覽列 -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-md border-b border-sky-200/80 shadow-md">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
       <a href="#" class="flex items-center gap-3">
-        <span class="text-2xl">🏰</span>
-        <span class="font-black tracking-wider text-white text-base sm:text-lg">MinMin & Oliver 迪士尼之旅</span>
+        <span class="text-3xl filter drop-shadow">🏰</span>
+        <div>
+          <span class="font-disney font-bold text-xl sm:text-2xl text-sky-700 tracking-wide block leading-none">Hong Kong Disneyland</span>
+          <span class="text-xs font-semibold text-amber-600 tracking-wider">MinMin & Oliver 奇妙冒險特輯</span>
+        </div>
       </a>
-      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300">
-        <a href="#day1" class="hover:text-amber-400 transition">Day 1 啟航與東涌</a>
-        <a href="#day2" class="hover:text-amber-400 transition">Day 2 迪士尼夢幻攻略</a>
-        <a href="#memories" class="hover:text-amber-400 transition">精彩回憶集錦</a>
+
+      <!-- 選單 -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-bold text-sky-900">
+        <a href="#day1" class="hover:text-amber-500 transition py-1">Day 1 啟航與東涌</a>
+        <a href="#day2" class="hover:text-amber-500 transition py-1">Day 2 迪士尼全攻略</a>
+        <a href="#characters" class="hover:text-amber-500 transition py-1">主角專屬設施</a>
       </nav>
-      <a href="#day1" class="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-extrabold px-6 py-2.5 rounded-full transition shadow-lg shadow-amber-500/20 text-sm">
-        開始探索 ✨
+
+      <a href="#day2" class="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-900 font-extrabold px-6 py-2.5 rounded-full transition shadow-md shadow-amber-400/30 text-sm flex items-center gap-1.5">
+        <span>✨ 展開奇妙之旅</span>
       </a>
     </div>
   </header>
 
-  <!-- 主視覺 Hero 區 -->
-  <section class="disney-hero-bg min-h-screen pt-32 pb-20 flex items-center justify-center relative overflow-hidden px-6">
+  <!-- 主視覺 Hero 區 (藍天白雲 + 迪士尼城堡氛圍) -->
+  <section class="min-h-[85vh] pt-36 pb-20 flex items-center justify-center relative px-6 cloud-bg">
     <div class="max-w-4xl mx-auto text-center relative z-10 space-y-6">
-      <span class="inline-block px-4 py-1.5 bg-amber-500/10 border border-amber-500/30 rounded-full text-amber-400 text-xs tracking-widest font-semibold uppercase shadow-lg">
-        115.08.20 - 08.21 香港迪士尼夢幻特輯
-      </span>
-      <h1 class="text-4xl sm:text-6xl md:text-7xl font-black text-white leading-tight">
-        開啟童話冒險<br><span class="gold-gradient">MinMin & Oliver 的奇幻之旅</span>
+      
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-white/80 border border-sky-300/60 rounded-full shadow-sm">
+        <span class="text-base">🎈</span>
+        <span class="text-sky-800 text-xs sm:text-sm font-bold tracking-wider">115.08.20 - 08.21 童話假期全紀錄</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-black text-sky-950 leading-tight drop-shadow-sm font-disney">
+        走進夢想王國<br>
+        <span class="disney-gold-text">MinMin & Oliver 的奇妙冒險</span>
       </h1>
-      <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
-        紀錄兩個寶貝從桃園機場出發，飛向香港迪士尼樂園與主題飯店的每一個歡樂笑聲與驚喜時刻！
+
+      <p class="text-base sm:text-xl text-sky-900/80 max-w-2xl mx-auto font-medium leading-relaxed bg-white/50 backdrop-blur-sm p-4 rounded-2xl border border-white/60">
+        從桃園機場啟程，踏上香港迪士尼的藍天白雲與夢幻城堡！記錄每個充滿笑聲與驚喜的奇妙瞬間 ✨
       </p>
+
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-        <a href="#day1" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-8 py-4 rounded-xl text-lg transition shadow-xl shadow-amber-500/20">
-          展開 Day 1 行程 ✈️
+        <a href="#day1" class="w-full sm:w-auto bg-amber-400 hover:bg-amber-500 text-slate-900 font-black px-8 py-4 rounded-2xl text-lg transition shadow-lg shadow-amber-400/30">
+          Day 1 啟航與東涌探索 ✈️
         </a>
-        <a href="#day2" class="w-full sm:w-auto bg-slate-900/80 hover:bg-slate-800 border border-indigo-500/30 text-white font-medium px-8 py-4 rounded-xl text-lg transition">
-          直接看 Day 2 迪士尼 🏰
+        <a href="#day2" class="w-full sm:w-auto bg-white/90 hover:bg-white text-sky-800 border-2 border-sky-300 font-bold px-8 py-4 rounded-2xl text-lg transition shadow-md">
+          Day 2 直奔迪士尼樂園 🏰
         </a>
       </div>
+
     </div>
   </section>
 
-  <!-- Day 1 行程區 -->
-  <section id="day1" class="py-24 bg-slate-900/50 border-t border-indigo-950 px-6">
+  <!-- Day 1 行程區 (明亮卡片風格) -->
+  <section id="day1" class="py-20 px-6 relative z-10">
     <div class="max-w-5xl mx-auto">
+      
       <div class="text-center mb-16">
-        <span class="text-amber-400 text-xs font-bold tracking-widest uppercase mb-2 block">Day 1 (8月20日)</span>
-        <h2 class="text-3xl sm:text-4xl font-black text-white">啟航與東涌探索之旅</h2>
+        <span class="inline-block px-3.5 py-1 bg-sky-100 text-sky-700 font-bold text-xs rounded-full uppercase tracking-wider mb-2 border border-sky-200">
+          Day 1 · 8月20日
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-black text-sky-950 font-disney">抵港啟程 · 東涌採買與電影夜</h2>
       </div>
 
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <!-- 卡片 1 -->
+        <div class="bg-white/85 backdrop-blur-sm rounded-3xl p-8 border border-white shadow-xl hover:shadow-2xl transition duration-300 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-14 h-14 bg-sky-100 text-sky-600 rounded-2xl flex items-center justify-center text-3xl shadow-inner">
+              🛫
+            </div>
+            <span class="text-xs font-bold text-amber-700 bg-amber-100/80 px-3 py-1 rounded-full inline-block">中午時段</span>
+            <h3 class="text-2xl font-black text-sky-950">桃園機場起飛</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              帶著滿滿的興奮與期待，115/8/20 中午在桃園機場搭機起飛，正式展開香港迪士尼奇幻假期！
+            </p>
+          </div>
+        </div>
+
+        <!-- 卡片 2 -->
+        <div class="bg-white/85 backdrop-blur-sm rounded-3xl p-8 border border-white shadow-xl hover:shadow-2xl transition duration-300 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-14 h-14 bg-pink-100 text-pink-600 rounded-2xl flex items-center justify-center text-3xl shadow-inner">
+              🚌
+            </div>
+            <span class="text-xs font-bold text-pink-700 bg-pink-100/80 px-3 py-1 rounded-full inline-block">下午時段</span>
+            <h3 class="text-2xl font-black text-sky-950">東涌 OUTLET 採買</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              抵達香港後搭乘雙層巴士前往東涌 OUTLET，開心吃美食、逛街散步，採買接下來幾天的滿滿美味糧食！
+            </p>
+          </div>
+        </div>
+
+        <!-- 卡片 3 -->
+        <div class="bg-white/85 backdrop-blur-sm rounded-3xl p-8 border border-white shadow-xl hover:shadow-2xl transition duration-300 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-3xl shadow-inner">
+              🍿
+            </div>
+            <span class="text-xs font-bold text-indigo-700 bg-indigo-100/80 px-3 py-1 rounded-full inline-block">晚上時段</span>
+            <h3 class="text-2xl font-black text-sky-950">飯店與電影之夜</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              入住迪士尼主題飯店逛逛，在<strong>馬里布遊戲室</strong>放電暢玩，晚上享受<strong>好萊塢電影夜</strong>邊看電影邊吃爆米花！
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Day 2 樂園全攻略區 (迪士尼園區主題地圖感) -->
+  <section id="day2" class="py-20 px-6 relative z-10">
+    <div class="max-w-5xl mx-auto bg-white/90 backdrop-blur-md rounded-3xl p-8 sm:p-12 border-2 border-white shadow-2xl space-y-12">
+      
+      <div class="text-center space-y-2 border-b border-sky-100 pb-8">
+        <span class="inline-block px-3.5 py-1 bg-amber-100 text-amber-800 font-bold text-xs rounded-full uppercase tracking-wider">
+          Day 2 · 8月21日
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-black text-sky-950 font-disney">香港迪士尼樂園 · 夢幻全攻略</h2>
+        <p class="text-slate-600 text-sm sm:text-base">提早入園 9:00 開啟奇妙魔法，解鎖一個又一個童話園區！</p>
+      </div>
+
+      <!-- 攻略時間軸 -->
       <div class="space-y-8">
-        <!-- 階段 1 -->
-        <div class="bg-slate-950 border border-indigo-900/60 rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col md:flex-row gap-6 items-center">
-          <div class="w-full md:w-1/3 aspect-video bg-indigo-950/50 rounded-2xl border border-indigo-800/40 flex items-center justify-center text-4xl">
-            ✈️
+        
+        <!-- 設施 1 & 城堡 -->
+        <div class="flex items-start gap-4 p-5 rounded-2xl bg-sky-50/70 border border-sky-100">
+          <div class="w-12 h-12 bg-sky-500 text-white font-black rounded-2xl flex items-center justify-center text-xl shrink-0 shadow-md">
+            1
           </div>
-          <div class="w-full md:w-2/3 space-y-2">
-            <span class="text-xs bg-amber-500/10 text-amber-400 px-3 py-1 rounded-full font-bold border border-amber-500/20">中午 115/8/20 起飛</span>
-            <h3 class="text-2xl font-bold text-white">桃園機場出發！</h3>
-            <p class="text-slate-300 text-sm leading-relaxed">帶著興奮期待的心情，MinMin 與 Oliver 在桃園機場搭乘飛機，準備飛向香港展開夢幻假期。</p>
-          </div>
-        </div>
-
-        <!-- 階段 2 -->
-        <div class="bg-slate-950 border border-indigo-900/60 rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col md:flex-row gap-6 items-center">
-          <div class="w-full md:w-1/3 aspect-video bg-indigo-950/50 rounded-2xl border border-indigo-800/40 flex items-center justify-center text-4xl">
-            🛍️
-          </div>
-          <div class="w-full md:w-2/3 space-y-2">
-            <span class="text-xs bg-amber-500/10 text-amber-400 px-3 py-1 rounded-full font-bold border border-amber-500/20">下午抵達香港</span>
-            <h3 class="text-2xl font-bold text-white">東涌 OUTLET 吃喝玩樂與補給</h3>
-            <p class="text-slate-300 text-sm leading-relaxed">搭乘雙層巴士直奔東涌 OUTLET，開心享用美食、逛街血拼，並為接下來幾天採買滿滿的美味糧食！</p>
+          <div class="space-y-1">
+            <h3 class="text-xl font-bold text-sky-950 flex items-center gap-2">
+              🏰 奇妙夢想城堡拍照 ＆ 魔雪奇幻之旅
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              早上 9:00 提早入園！第一件事直奔城堡前開心合照留下美好紀念。接著直衝<strong>魔雪奇緣世界</strong>，暢玩第一個設施<strong>「魔雪奇幻之旅」</strong>，並在浪漫的艾倫代爾小鎮上走逛拍美照！
+            </p>
           </div>
         </div>
 
-        <!-- 階段 3 -->
-        <div class="bg-slate-950 border border-indigo-900/60 rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col md:flex-row gap-6 items-center">
-          <div class="w-full md:w-1/3 aspect-video bg-indigo-950/50 rounded-2xl border border-indigo-800/40 flex items-center justify-center text-4xl">
-            🍿
+        <!-- 設施 2 -->
+        <div class="flex items-start gap-4 p-5 rounded-2xl bg-emerald-50/70 border border-emerald-100">
+          <div class="w-12 h-12 bg-emerald-500 text-white font-black rounded-2xl flex items-center justify-center text-xl shrink-0 shadow-md">
+            2
           </div>
-          <div class="w-full md:w-2/3 space-y-2">
-            <span class="text-xs bg-amber-500/10 text-amber-400 px-3 py-1 rounded-full font-bold border border-amber-500/20">晚上歡樂時光</span>
-            <h3 class="text-2xl font-bold text-white">飯店漫步 × 馬里布遊戲室 × 電影夜</h3>
-            <p class="text-slate-300 text-sm leading-relaxed">進駐飯店輕鬆逛逛，前往好玩的馬里布遊戲室放電，晚上參加好萊塢電影夜，一邊看電影一邊吃爆米花，超幸福！</p>
+          <div class="space-y-1">
+            <h3 class="text-xl font-bold text-emerald-950 flex items-center gap-2">
+              🌊 探險世界 · 森林河流之旅
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              深入探險世界！搭上探險船展開刺激的神祕河流冒險，驚喜連連。
+            </p>
           </div>
         </div>
+
+        <!-- 設施 3 (MinMin & Oliver 專屬挑戰) -->
+        <div id="characters" class="flex items-start gap-4 p-5 rounded-2xl bg-amber-50/70 border border-amber-200">
+          <div class="w-12 h-12 bg-amber-500 text-white font-black rounded-2xl flex items-center justify-center text-xl shrink-0 shadow-md">
+            3
+          </div>
+          <div class="space-y-3 w-full">
+            <h3 class="text-xl font-bold text-amber-950">
+              🧸 玩具總動員大本營 · 雙寶專屬挑戰！
+            </h3>
+            <div class="grid sm:grid-cols-2 gap-4 pt-1">
+              <div class="bg-white p-4 rounded-xl border border-amber-100 shadow-sm">
+                <span class="text-xs font-bold text-pink-600 bg-pink-50 px-2 py-0.5 rounded-full">MinMin 專屬</span>
+                <p class="font-bold text-slate-800 text-base mt-1">🪂 玩具兵團跳降傘</p>
+                <p class="text-xs text-slate-500 mt-0.5">挑戰刺激的高空升降樂趣！</p>
+              </div>
+              <div class="bg-white p-4 rounded-xl border border-amber-100 shadow-sm">
+                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full">Oliver 專屬</span>
+                <p class="font-bold text-slate-800 text-base mt-1">🐶 轉轉彈弓狗 ＆ 園區走逛拍</p>
+                <p class="text-xs text-slate-500 mt-0.5">開心地旋轉奔馳，在玩具世界盡情拍照！</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 漫遊與驚喜遇見 Moana -->
+        <div class="flex items-start gap-4 p-5 rounded-2xl bg-purple-50/70 border border-purple-100">
+          <div class="w-12 h-12 bg-purple-500 text-white font-black rounded-2xl flex items-center justify-center text-xl shrink-0 shadow-md">
+            4
+          </div>
+          <div class="space-y-1">
+            <h3 class="text-xl font-bold text-purple-950 flex items-center gap-2">
+              🌺 幻想世界童話園林 ＆ 巧遇 Moana！
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              漫步在<strong>幻想世界的童話園林</strong>與<strong>探險世界的歷奇噴水池</strong>清涼嬉戲。走在探險世界的路上，更超級幸運遇見<strong>《魔海奇緣凱旋慶典》</strong>，親眼見到勇敢的 Moana 本人！
+            </p>
+          </div>
+        </div>
+
       </div>
-    </div>
-  </section>
 
-  <!-- Day 2 行程區 -->
-  <section id="day2" class="py-24 bg-slate-950 border-t border-indigo-950 px-6">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-16">
-        <span class="text-amber-400 text-xs font-bold tracking-widest uppercase mb-2 block">Day 2 (8月21日)</span>
-        <h2 class="text-3xl sm:text-4xl font-black text-white">香港迪士尼樂園夢幻全攻略</h2>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- 早上 -->
-        <div class="bg-indigo-950/20 border border-indigo-900/50 p-8 rounded-3xl space-y-4">
-          <div class="w-12 h-12 bg-amber-500/10 text-amber-400 rounded-xl flex items-center justify-center text-2xl font-bold">👑</div>
-          <h3 class="text-xl font-bold text-white">早晨 9:00 提早入園</h3>
-          <ul class="space-y-2 text-slate-300 text-sm">
-            <li>✨ 準時入園，第一站直奔城堡前開心合照！</li>
-            <li>❄️ <strong>冰雪奇緣世界</strong>：玩魔雪奇幻之旅，在艾倫代爾小鎮浪漫漫步拍美照。</li>
-            <li>🌊 <strong>探險世界</strong>：搭乘森林河流之旅，展開神祕冒險。</li>
-          </ul>
-        </div>
-
-        <!-- 下午與驚喜 -->
-        <div class="bg-indigo-950/20 border border-indigo-900/50 p-8 rounded-3xl space-y-4">
-          <div class="w-12 h-12 bg-amber-500/10 text-amber-400 rounded-xl flex items-center justify-center text-2xl font-bold">🧸</div>
-          <h3 class="text-xl font-bold text-white">玩具總動員與奇幻相遇</h3>
-          <ul class="space-y-2 text-slate-300 text-sm">
-            <li>🪂 <strong>MinMin</strong>：挑戰刺激的玩具兵團跳降傘！</li>
-            <li>🐶 <strong>Oliver</strong>：暢玩轉轉彈弓狗，開心園區走逛。</li>
-            <li>⛲ 探險世界歷奇噴水池嬉戲。</li>
-            <li>🌺 <strong>超級驚喜</strong>：路上巧遇《海洋奇緣》凱旋慶典，親眼見到 Moana 本人！</li>
-          </ul>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- 頁尾 -->
-  <footer class="py-12 bg-slate-950 border-t border-indigo-950 text-center text-slate-500 text-xs px-6">
-    <p>© 2026 MinMin & Oliver's Hong Kong Disneyland Adventure. All Rights Reserved.</p>
+  <footer class="py-12 text-center text-sky-900/60 text-xs font-semibold relative z-10">
+    <p>© 2026 MinMin & Oliver's Magical Hong Kong Disneyland Journey. All Rights Reserved.</p>
   </footer>
 
-  <!-- 滑鼠點點光軌互動腳本 -->
+  <!-- 泡泡生成與滑鼠互動腳本 -->
   <script>
-    let lastX = window.innerWidth / 2;
-    let lastY = window.innerHeight / 2;
+    // 1. 自動持續生成背景七彩大泡泡
+    const bubbleContainer = document.getElementById('bubble-container');
+    function createBackgroundBubble() {
+      const bubble = document.createElement('div');
+      bubble.className = 'bubble';
+      
+      const size = Math.random() * 70 + 35; // 泡泡尺寸 35px ~ 105px
+      bubble.style.width = size + 'px';
+      bubble.style.height = size + 'px';
+      bubble.style.left = (Math.random() * 100) + 'vw';
+      
+      const duration = Math.random() * 8 + 7; // 飄浮時間 7s ~ 15s
+      bubble.style.animationDuration = duration + 's';
+      
+      bubbleContainer.appendChild(bubble);
+      setTimeout(() => { bubble.remove(); }, duration * 1000);
+    }
+    
+    // 每 600 毫秒產生一個背景泡泡
+    setInterval(createBackgroundBubble, 600);
+    for(let i=0; i<8; i++) createBackgroundBubble();
+
+    // 2. 滑鼠移動時產生夢幻小泡泡
+    let lastX = 0;
+    let lastY = 0;
     let lastTime = 0;
 
     document.addEventListener('mousemove', function(e) {
       const now = Date.now();
-      if (now - lastTime > 25) {
+      if (now - lastTime > 40) {
         lastTime = now;
-        const dot = document.createElement('div');
-        dot.className = 'glow-dot';
-        const size = Math.random() * 10 + 8;
-        dot.style.width = size + 'px';
-        dot.style.height = size + 'px';
-        dot.style.left = e.clientX + 'px';
-        dot.style.top = e.clientY + 'px';
+        const bubble = document.createElement('div');
+        bubble.className = 'cursor-bubble';
+        
+        const size = Math.random() * 16 + 10;
+        bubble.style.width = size + 'px';
+        bubble.style.height = size + 'px';
+        bubble.style.left = e.clientX + 'px';
+        bubble.style.top = e.clientY + 'px';
 
-        document.body.appendChild(dot);
-        setTimeout(() => { dot.remove(); }, 600);
+        document.body.appendChild(bubble);
+        setTimeout(() => { bubble.remove(); }, 700);
       }
     });
   </script>
