@@ -7,6 +7,7 @@
   <title>MinMin & Oliver 's lovly adventure</title>
   <meta name="description" content="記錄 115 年 8 月 20 日至 8 月 23 日，MinMin & Oliver 's lovly adventure！">
 
+  <!-- 載入 Tailwind CSS 與 Google 字體 -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;800;900&family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
   
@@ -92,8 +93,10 @@
 </head>
 <body class="text-slate-700 antialiased selection:bg-amber-400 selection:text-slate-900 relative overflow-x-hidden">
 
+  <!-- 背景飄浮七彩泡泡容器 -->
   <div id="bubble-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
 
+  <!-- 頂部官網風格導覽列 -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-md border-b border-sky-200/80 shadow-md">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       
@@ -105,6 +108,7 @@
         </div>
       </a>
 
+      <!-- 導覽列 -->
       <nav class="hidden lg:flex items-center gap-5 text-sm font-bold text-sky-900">
         <a href="#characters-meet" class="text-pink-600 hover:text-pink-700 transition py-1 flex items-center gap-1">
           <span>✍️</span> 拍拍照簽簽名
@@ -121,6 +125,7 @@
     </div>
   </header>
 
+  <!-- 主視覺 Hero 區 -->
   <section class="min-h-[85vh] pt-36 pb-20 flex items-center justify-center relative px-6 cloud-bg">
     <div class="max-w-4xl mx-auto text-center relative z-10 space-y-6">
       
@@ -138,6 +143,7 @@
         從桃園機場啟程，踏上香港迪士尼的藍天白雲與夢幻城堡！記錄每個充滿笑聲、驚喜與活力的開心瞬間 ✨
       </p>
 
+      <!-- 快速導覽大按鈕 -->
       <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 max-w-4xl mx-auto pt-6">
         <a href="#characters-meet" class="col-span-2 sm:col-span-1 bg-gradient-to-br from-pink-50 to-pink-100 hover:from-pink-400 hover:to-pink-500 hover:text-white text-pink-900 border-2 border-pink-300 font-black py-4 px-2 rounded-2xl text-sm sm:text-base transition shadow-md flex flex-col items-center justify-center gap-1 group">
           <span class="text-2xl group-hover:scale-110 transition">✍️</span>
@@ -164,6 +170,7 @@
     </div>
   </section>
 
+  <!-- 🌟 特別獨立專欄：夢幻角色見面會 · 拍拍照簽簽名 -->
   <section id="characters-meet" class="py-20 px-6 relative z-10">
     <div class="max-w-6xl mx-auto bg-gradient-to-b from-white/95 to-pink-50/90 backdrop-blur-md rounded-3xl p-8 sm:p-12 border-2 border-pink-200 shadow-2xl space-y-10">
       
@@ -179,8 +186,10 @@
         </p>
       </div>
 
+      <!-- 精選互動打卡照片牆 -->
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-2 pb-6 border-b border-pink-200">
         
+        <!-- Jessie 簽名打卡照 -->
         <div class="bg-white rounded-2xl overflow-hidden border border-yellow-200 shadow-md flex flex-col">
           <div class="aspect-[3/4] overflow-hidden group">
             <img src="379601.jpg" alt="Jessie 簽名" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -196,6 +205,7 @@
           </div>
         </div>
 
+        <!-- 跟 Jessie 合照打卡照 -->
         <div class="bg-white rounded-2xl overflow-hidden border border-yellow-200 shadow-md flex flex-col">
           <div class="aspect-[3/4] overflow-hidden group">
             <img src="379603.jpg" alt="跟 Jessie 合照" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -211,6 +221,7 @@
           </div>
         </div>
 
+        <!-- 跟探險家合照打卡照 -->
         <div class="bg-white rounded-2xl overflow-hidden border border-emerald-200 shadow-md flex flex-col sm:col-span-2 lg:col-span-1">
           <div class="aspect-[3/4] overflow-hidden group">
             <img src="379591.jpg" alt="跟探險家合照" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -221,13 +232,14 @@
               <span class="text-xs text-slate-400 font-bold">探險世界</span>
             </div>
             <p class="text-xs text-slate-600 leading-relaxed">
-              戴著圓盤帽、背著全副裝備的探險家叔叔跟雙寶開心比讚同框留念！
+              戴著圓盤帽、背著全副裝備的探險家叔叔跟孩子們開心比讚同框留念！
             </p>
           </div>
         </div>
 
       </div>
 
+      <!-- 角色名錄徽章區 -->
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
         
         <div class="bg-white p-5 rounded-2xl border border-pink-100 shadow-sm flex flex-col items-center text-center space-y-2 hover:shadow-md transition">
@@ -319,6 +331,7 @@
     </div>
   </section>
 
+  <!-- 1. 啟航區 (Day 1 · 8/20) -->
   <section id="day1" class="py-20 px-6 relative z-10">
     <div class="max-w-6xl mx-auto space-y-16">
       
@@ -329,6 +342,7 @@
         <h2 class="text-3xl sm:text-4xl font-black text-sky-950 font-disney">啟航 · 抵港、東涌採買與好萊塢酒店</h2>
       </div>
 
+      <!-- 飛行、捷運與交通紀錄 -->
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         
         <div class="bg-white/90 backdrop-blur-sm rounded-3xl overflow-hidden border border-white shadow-xl hover:shadow-2xl transition duration-300 flex flex-col">
@@ -350,9 +364,9 @@
           </div>
           <div class="p-5 space-y-2">
             <span class="text-xs font-bold text-sky-700 bg-sky-100 px-2.5 py-0.5 rounded-full inline-block">等待登機</span>
-            <h3 class="text-lg font-black text-sky-950">候機走廊比一比</h3>
+            <h3 class="text-lg font-black text-sky-950">第一天等待登機</h3>
             <p class="text-slate-600 text-xs leading-relaxed">
-              在登機長廊前比出各種俏皮動作，已經迫不及待要衝上飛機！
+              在候機長廊前比出各種俏皮動作，已經迫不及待要衝上飛機！
             </p>
           </div>
         </div>
@@ -404,7 +418,7 @@
             <span class="text-xs font-bold text-purple-700 bg-purple-100 px-2.5 py-0.5 rounded-full inline-block">雙層巴士</span>
             <h3 class="text-lg font-black text-sky-950">雙層巴士第一排</h3>
             <p class="text-slate-600 text-xs leading-relaxed">
-              搭雙層巴士前往東涌，坐在上層最前方大景觀窗前，居高臨下看海景好過癮！
+              出發去東涌 outlet，坐在雙層巴士上層第一排大景觀窗前，居高臨下看風景好過癮！
             </p>
           </div>
         </div>
@@ -424,6 +438,7 @@
 
       </div>
 
+      <!-- 抵達迪士尼飯店歡樂時光 -->
       <div class="bg-white/90 backdrop-blur-md rounded-3xl p-8 sm:p-10 border border-white shadow-2xl space-y-8">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-sky-100 pb-5">
           <div>
@@ -481,6 +496,7 @@
     </div>
   </section>
 
+  <!-- 2. 樂園第一天區 (Day 2 · 8/21 完整行程串連) -->
   <section id="day2" class="py-20 px-6 relative z-10">
     <div class="max-w-6xl mx-auto space-y-12">
       
@@ -489,9 +505,10 @@
           8月21日 · 樂園首日探險
         </span>
         <h2 class="text-3xl sm:text-5xl font-black text-sky-950 font-disney">樂園第一天 · 開心全攻略</h2>
-        <p class="text-slate-600 text-sm sm:text-base">早早起床刷牙出發、城堡合照、冰雪奇緣世界、獅子王、明日世界與夜間煙火！</p>
+        <p class="text-slate-600 text-sm sm:text-base">早早起床刷牙出發、城堡合照、冰雪奇緣世界、童話園林、礦坑玩水、玩具總動員、漫威出任務與夜間煙火！</p>
       </div>
 
+      <!-- 入園前準備與迪士尼門口 -->
       <div class="grid md:grid-cols-2 gap-6">
         
         <div class="bg-white/90 backdrop-blur-md rounded-3xl p-6 border border-white shadow-xl flex flex-col justify-between">
@@ -518,8 +535,10 @@
 
       </div>
 
+      <!-- 行程內容流水線 -->
       <div class="space-y-12">
 
+        <!-- 城堡我們來了 -->
         <div class="bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-white shadow-xl flex flex-col lg:flex-row gap-8 items-center">
           <div class="w-full lg:w-1/2 aspect-[3/4] rounded-2xl overflow-hidden shadow-md group">
             <img src="379533_0.jpg" alt="城堡我們來了" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -533,6 +552,7 @@
           </div>
         </div>
 
+        <!-- 冰雪奇緣世界 -->
         <div class="bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-white shadow-xl space-y-6">
           <div class="border-b border-sky-100 pb-4">
             <span class="text-xs font-bold text-cyan-700 bg-cyan-100 px-3 py-1 rounded-full inline-block mb-2">冰雪奇緣世界</span>
@@ -583,6 +603,7 @@
           </div>
         </div>
 
+        <!-- 第二個設施：森林河流之旅 -->
         <div class="bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-white shadow-xl flex flex-col lg:flex-row gap-8 items-center">
           <div class="w-full lg:w-1/2 aspect-[3/4] rounded-2xl overflow-hidden shadow-md group">
             <img src="379538_0.jpg" alt="第二個設施,帥哥導遊" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -596,6 +617,7 @@
           </div>
         </div>
 
+        <!-- 玩具總動員大本營 -->
         <div class="bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-white shadow-xl space-y-8">
           <div class="border-b border-sky-100 pb-4">
             <span class="text-xs font-bold text-amber-700 bg-amber-100 px-3 py-1 rounded-full inline-block mb-2">反斗奇兵大本營</span>
@@ -665,6 +687,7 @@
             </div>
           </div>
 
+          <!-- 小傘兵挑戰 -->
           <div class="bg-emerald-50 rounded-2xl p-6 border border-emerald-200 flex flex-col md:flex-row gap-6 items-center">
             <div class="w-full md:w-1/3 aspect-[3/4] rounded-xl overflow-hidden shadow-md group">
               <img src="379542_0.jpg" alt="小傘兵挑戰" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -679,29 +702,40 @@
           </div>
         </div>
 
+        <!-- 漫遊、童話園林、歷奇噴水池、Coco、獅子王秀 -->
         <div class="bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-white shadow-xl space-y-8">
           <div class="border-b border-sky-100 pb-4">
-            <span class="text-xs font-bold text-cyan-700 bg-cyan-100 px-3 py-1 rounded-full inline-block mb-2">探險世界探訪</span>
-            <h3 class="text-2xl sm:text-3xl font-black text-sky-950 font-disney">歷奇噴水池嬉水 · 遇見 Moana & Coco 主角唱歌 🌿</h3>
-            <p class="text-slate-600 text-sm mt-1">漫步童話園林、在歷奇噴水池清涼解暑，並在探險世界沿途欣賞精彩表演！</p>
+            <span class="text-xs font-bold text-cyan-700 bg-cyan-100 px-3 py-1 rounded-full inline-block mb-2">探險與童話漫遊</span>
+            <h3 class="text-2xl sm:text-3xl font-black text-sky-950 font-disney">幻想世界的童話園林 ＆ 歷奇噴水池嬉水 🌿</h3>
           </div>
 
           <div class="grid md:grid-cols-2 gap-6 items-center">
-            <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-md group bg-sky-50">
-              <img src="379607.jpg" alt="歷奇噴水池" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <!-- 幻想世界的童話園林 (新補充 379545_0.jpg) -->
+            <div class="bg-sky-50/50 rounded-2xl overflow-hidden border border-sky-100 shadow-md group">
+              <div class="aspect-[3/4] overflow-hidden">
+                <img src="379545_0.jpg" alt="幻想世界的童話園林" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              </div>
+              <div class="p-4 space-y-1">
+                <span class="text-xs font-bold text-purple-700 bg-purple-100 px-2.5 py-0.5 rounded-full inline-block">📖 翻開童話書</span>
+                <p class="font-bold text-sky-950 text-base">幻想世界的童話園林</p>
+                <p class="text-xs text-slate-500 leading-relaxed">在森林步道旁轉動立體故事書，欣賞白雪公主與七個小矮人的微縮城堡小鎮！</p>
+              </div>
             </div>
-            <div class="space-y-4">
-              <span class="text-xs font-bold text-cyan-800 bg-cyan-100 px-3 py-1 rounded-full inline-block">💦 清涼消暑嬉水</span>
-              <h4 class="text-2xl font-black text-sky-950 font-disney">歷奇噴水池 · 原始圖騰與泉水嬉戲</h4>
-              <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                在探險世界巨大神秘的原木圖騰柱與水槍旁開心玩水！穿著短褲在木棧道上穿梭，四周突然噴起清涼的水花，暑氣瞬間全消！
-              </p>
-              <p class="text-slate-500 text-xs">
-                走在路上還巧遇<strong>《魔海奇緣凱旋慶典》親眼見到 Moana</strong>，以及<strong>《Coco 可可夜總會》主角米高抱著吉他熱唱</strong>！
-              </p>
+
+            <!-- 歷奇噴水池 -->
+            <div class="bg-cyan-50/50 rounded-2xl overflow-hidden border border-cyan-100 shadow-md group">
+              <div class="aspect-[3/4] overflow-hidden">
+                <img src="379607.jpg" alt="歷奇噴水池" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              </div>
+              <div class="p-4 space-y-1">
+                <span class="text-xs font-bold text-cyan-700 bg-cyan-100 px-2.5 py-0.5 rounded-full inline-block">💦 清涼消暑</span>
+                <p class="font-bold text-sky-950 text-base">歷奇噴水池 · 原始圖騰與泉水嬉戲</p>
+                <p class="text-xs text-slate-500 leading-relaxed">在巨大的原木圖騰柱與水槍旁穿梭，四周突然噴起清涼水花，暑氣全消！路上還巧遇 Moana 與 Coco 主角米高！</p>
+              </div>
             </div>
           </div>
 
+          <!-- 獅子王秀 -->
           <div class="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 border border-slate-800 shadow-2xl flex flex-col lg:flex-row gap-8 items-center mt-4">
             <div class="w-full lg:w-1/2 aspect-[4/3] rounded-xl overflow-hidden shadow-md group">
               <img src="379548_0.jpg" alt="超厲害的獅子王show" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -716,14 +750,40 @@
           </div>
         </div>
 
+        <!-- 礦坑玩水、探險家聊天合照、熱爆吃冰 -->
         <div class="bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-white shadow-xl space-y-6">
           <div class="border-b border-sky-100 pb-4">
             <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full inline-block mb-2">午後奇遇</span>
-            <h3 class="text-2xl sm:text-3xl font-black text-sky-950 font-disney">礦坑玩水、跟探險家聊天好開心、熱爆吃冰！🍦</h3>
+            <h3 class="text-2xl sm:text-3xl font-black text-sky-950 font-disney">礦坑玩水 · 跟探險家聊天好開心 · 熱爆吃冰！🍦</h3>
           </div>
 
-          <div class="grid sm:grid-cols-3 gap-6">
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             
+            <!-- 礦坑玩水 1 (新補充 379549_0.jpg) -->
+            <div class="rounded-2xl overflow-hidden border border-blue-100 shadow-md group flex flex-col bg-blue-50/40">
+              <div class="aspect-[3/4] overflow-hidden">
+                <img src="379549_0.jpg" alt="礦坑玩水" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              </div>
+              <div class="p-4">
+                <span class="text-xs font-bold text-blue-800 bg-blue-100 px-2.5 py-0.5 rounded-full inline-block mb-1">💧 歡樂水滴</span>
+                <p class="font-bold text-sky-950 text-sm">礦坑玩水：接水珠！</p>
+                <p class="text-xs text-slate-500 mt-1">抬頭笑臉迎著上方滴落的清涼泉水，在木棧道上開懷大笑！</p>
+              </div>
+            </div>
+
+            <!-- 礦坑玩水 2 (新補充 379550_0.jpg) -->
+            <div class="rounded-2xl overflow-hidden border border-blue-100 shadow-md group flex flex-col bg-blue-50/40">
+              <div class="aspect-[3/4] overflow-hidden">
+                <img src="379550_0.jpg" alt="礦坑玩水" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              </div>
+              <div class="p-4">
+                <span class="text-xs font-bold text-blue-800 bg-blue-100 px-2.5 py-0.5 rounded-full inline-block mb-1">☂️ 撐傘踏水</span>
+                <p class="font-bold text-sky-950 text-sm">礦坑玩水：小雨傘探險</p>
+                <p class="text-xs text-slate-500 mt-1">撐著小黑傘在礦坑水霧木棧道上踏著小水花，涼爽又愜意！</p>
+              </div>
+            </div>
+
+            <!-- 跟探險家聊天好開心 (379597.jpg) -->
             <div class="rounded-2xl overflow-hidden border border-emerald-100 shadow-md group flex flex-col bg-emerald-50/40">
               <div class="aspect-[3/4] overflow-hidden">
                 <img src="379597.jpg" alt="跟探險家聊天好開心" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -731,21 +791,11 @@
               <div class="p-4">
                 <span class="text-xs font-bold text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full inline-block mb-1">🌿 暢聊探險</span>
                 <p class="font-bold text-sky-950 text-sm">跟探險家聊天好開心！</p>
-                <p class="text-xs text-slate-500 mt-1">在礦坑旁遇到帥氣的探險家，認真地仰頭聽探險故事，互動超有趣！</p>
+                <p class="text-xs text-slate-500 mt-1">遇到穿著探險風衣的大叔，認真仰頭聽冒險故事，互動熱絡！</p>
               </div>
             </div>
 
-            <div class="rounded-2xl overflow-hidden border border-emerald-100 shadow-md group flex flex-col bg-emerald-50/40">
-              <div class="aspect-[3/4] overflow-hidden">
-                <img src="379591.jpg" alt="跟探險家合照" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-              </div>
-              <div class="p-4">
-                <span class="text-xs font-bold text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full inline-block mb-1">📸 探險紀念</span>
-                <p class="font-bold text-sky-950 text-sm">跟探險家合照留念！</p>
-                <p class="text-xs text-slate-500 mt-1">在綠意盎然的樹林前與探險家一起露出開心笑容比讚！</p>
-              </div>
-            </div>
-
+            <!-- 熱爆吃冰 (379599.jpg) -->
             <div class="rounded-2xl overflow-hidden border border-amber-100 shadow-md group flex flex-col bg-amber-50/40">
               <div class="aspect-[3/4] overflow-hidden">
                 <img src="379599.jpg" alt="熱爆吃冰" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -753,13 +803,14 @@
               <div class="p-4">
                 <span class="text-xs font-bold text-amber-800 bg-amber-100 px-2.5 py-0.5 rounded-full inline-block mb-1">🍧 消暑神器</span>
                 <p class="font-bold text-sky-950 text-sm">熱爆吃冰！超幸福！</p>
-                <p class="text-xs text-slate-500 mt-1">炎熱午後一口咬下超可愛的迪士尼冰棒，整個人都融化在甜甜的涼意裡！</p>
+                <p class="text-xs text-slate-500 mt-1">炎熱午後一口咬下超可愛的米妮造型冰棒，眨眨眼笑得甜滋滋！</p>
               </div>
             </div>
 
           </div>
         </div>
 
+        <!-- 中繼站回到 Toy Story 商店、Jessie 簽名合照 -->
         <div class="bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-white shadow-xl space-y-6">
           <div class="border-b border-sky-100 pb-4">
             <span class="text-xs font-bold text-yellow-700 bg-yellow-100 px-3 py-1 rounded-full inline-block mb-2">涼快中繼站</span>
@@ -775,7 +826,7 @@
               <div class="p-4">
                 <span class="text-xs font-bold text-sky-800 bg-sky-100 px-2.5 py-0.5 rounded-full inline-block mb-1">❄️ 商店吹冷氣</span>
                 <p class="font-bold text-sky-950 text-sm">Toy Story 商店涼快中</p>
-                <p class="text-xs text-slate-500 mt-1">走進充滿玩具的冷氣房休息，舒服地靠在展示架前恢復體力！</p>
+                <p class="text-xs text-slate-500 mt-1">靠在叉奇 Forky 展示架旁避暑休息，恢復滿滿體力！</p>
               </div>
             </div>
 
@@ -785,8 +836,8 @@
               </div>
               <div class="p-4">
                 <span class="text-xs font-bold text-sky-800 bg-sky-100 px-2.5 py-0.5 rounded-full inline-block mb-1">🧸 滿滿周邊</span>
-                <p class="font-bold text-sky-950 text-sm">商店好逛好涼爽！</p>
-                <p class="text-xs text-slate-500 mt-1">逛著架上色彩繽紛的巴斯光年與三眼怪公仔，眼睛閃閃發亮！</p>
+                <p class="font-bold text-sky-950 text-sm">跟叉奇與小刀合照</p>
+                <p class="text-xs text-slate-500 mt-1">坐在大積木上跟玩具總動員4的大明星們拍照打卡！</p>
               </div>
             </div>
 
@@ -797,7 +848,7 @@
               <div class="p-4">
                 <span class="text-xs font-bold text-yellow-800 bg-yellow-100 px-2.5 py-0.5 rounded-full inline-block mb-1">✍️ 親筆紀念</span>
                 <p class="font-bold text-sky-950 text-sm">Jessie 專注簽名中！</p>
-                <p class="text-xs text-slate-500 mt-1">幸運巧遇翠絲！遞上專屬簽名板，看著翠絲親筆一筆一劃簽下名字！</p>
+                <p class="text-xs text-slate-500 mt-1">遞上專屬簽名板，看著翠絲親筆簽下美麗的名字！</p>
               </div>
             </div>
 
@@ -808,57 +859,125 @@
               <div class="p-4">
                 <span class="text-xs font-bold text-yellow-800 bg-yellow-100 px-2.5 py-0.5 rounded-full inline-block mb-1">📸 甜蜜同框</span>
                 <p class="font-bold text-sky-950 text-sm">跟 Jessie 開心大合照！</p>
-                <p class="text-xs text-slate-500 mt-1">熱情活潑的翠絲雙手搭著肩膀，留下無比珍貴的同框回憶！</p>
+                <p class="text-xs text-slate-500 mt-1">熱情活潑的翠絲牽著手，留下珍貴的同框回憶！</p>
               </div>
             </div>
 
           </div>
         </div>
 
+        <!-- 明日世界：漫威超級英雄出任務 (新補充漫威 4 連發) -->
         <div class="bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-white shadow-xl space-y-6">
           <div class="border-b border-sky-100 pb-4">
-            <span class="text-xs font-bold text-red-700 bg-red-100 px-3 py-1 rounded-full inline-block mb-2">明日世界熱血挑戰</span>
-            <h3 class="text-2xl sm:text-3xl font-black text-sky-950 font-disney">蟻人與黃蜂女射擊遊戲 · 我超強！🎯</h3>
+            <span class="text-xs font-bold text-red-700 bg-red-100 px-3 py-1 rounded-full inline-block mb-2">明日世界超級英雄</span>
+            <h3 class="text-2xl sm:text-3xl font-black text-sky-950 font-disney">漫威園區就是要帥 · 跟著鋼鐵人出任務！🦸‍♂️</h3>
           </div>
 
-          <div class="grid md:grid-cols-2 gap-8 items-center">
-            <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-md group bg-sky-50">
-              <img src="379547_0.jpg" alt="蟻人與黃蜂女射擊遊戲我超強" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            </div>
-            <div class="space-y-4">
-              <span class="text-xs font-bold text-red-800 bg-red-100 px-3 py-1 rounded-full inline-block">💥 戰鬥力破表！</span>
-              <h4 class="text-2xl font-black text-sky-950 font-disney">突擊阿尼姆·索拉的神盾局戰役</h4>
-              <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                登上神盾局野戰車，手握脈衝電磁槍瘋狂瞄準機械蟲群！精準度超高、分數一路狂飆，「蟻人與黃蜂女射擊遊戲我超強」！
-              </p>
-              <div class="p-4 bg-sky-50 rounded-2xl border border-sky-200 text-xs text-slate-600 space-y-1">
-                <p>🎬 體驗震撼的 <strong>Iron Man 鋼鐵人 4D 電影與小遊戲</strong></p>
-                <p>🕷️ 沿途巧遇<strong>帥爆了的蜘蛛人</strong>本尊並留下深刻印象！</p>
-                <p>🍔 晚餐在火箭餐廳享用超酷的<strong>蜘蛛人漢堡</strong>！</p>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- 漫威園區就是要帥 (新補充 379606.jpg) -->
+            <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-md group flex flex-col bg-slate-50">
+              <div class="aspect-[3/4] overflow-hidden">
+                <img src="379606.jpg" alt="漫威園區就是要帥" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
               </div>
+              <div class="p-4">
+                <span class="text-xs font-bold text-slate-800 bg-slate-200 px-2.5 py-0.5 rounded-full inline-block mb-1">🛡️ 神盾局科研展廳</span>
+                <p class="font-bold text-sky-950 text-sm">漫威園區就是要帥！</p>
+                <p class="text-xs text-slate-500 mt-1">站在巨大的神盾局鷹徽標誌前雙手比 pose，帥氣度滿分！</p>
+              </div>
+            </div>
+
+            <!-- 跟著鋼鐵人出任務 (新補充 379609.jpg) -->
+            <div class="rounded-2xl overflow-hidden border border-cyan-200 shadow-md group flex flex-col bg-cyan-50/40">
+              <div class="aspect-[3/4] overflow-hidden">
+                <img src="379609.jpg" alt="跟著鋼鐵人出任務" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              </div>
+              <div class="p-4">
+                <span class="text-xs font-bold text-cyan-800 bg-cyan-100 px-2.5 py-0.5 rounded-full inline-block mb-1">🕶️ 特工就位</span>
+                <p class="font-bold text-sky-950 text-sm">跟著鋼鐵人出任務</p>
+                <p class="text-xs text-slate-500 mt-1">戴上專屬 3D 任務眼鏡托腮沉思，準備跟東尼·史塔克飛越高空！</p>
+              </div>
+            </div>
+
+            <!-- i am 浩克 (新補充 379608.jpg) -->
+            <div class="rounded-2xl overflow-hidden border border-red-200 shadow-md group flex flex-col bg-red-50/40">
+              <div class="aspect-[3/4] overflow-hidden">
+                <img src="379608.jpg" alt="i am 浩克" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              </div>
+              <div class="p-4">
+                <span class="text-xs font-bold text-red-800 bg-red-100 px-2.5 py-0.5 rounded-full inline-block mb-1">🟢 霸氣怒吼</span>
+                <p class="font-bold text-sky-950 text-sm">I AM 浩克！</p>
+                <p class="text-xs text-slate-500 mt-1">在浩克與鋼鐵人公仔牆前張牙舞爪，做出超霸氣的浩克怒吼表情！</p>
+              </div>
+            </div>
+
+            <!-- 一定要跟iron man拍一張 (新補充 379593.jpg) -->
+            <div class="rounded-2xl overflow-hidden border border-amber-200 shadow-md group flex flex-col bg-amber-50/40">
+              <div class="aspect-[3/4] overflow-hidden">
+                <img src="379593.jpg" alt="一定要跟iron man拍一張" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              </div>
+              <div class="p-4">
+                <span class="text-xs font-bold text-amber-800 bg-amber-100 px-2.5 py-0.5 rounded-full inline-block mb-1">✨ 傳奇裝甲</span>
+                <p class="font-bold text-sky-950 text-sm">一定要跟 Iron Man 拍一張！</p>
+                <p class="text-xs text-slate-500 mt-1">胸前方舟反應爐發光的等身鋼鐵人裝甲前，叉腰比 YA 同框留念！</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- 蟻人射擊遊戲成績單 (379607.jpg) -->
+          <div class="p-5 bg-sky-50 rounded-2xl border border-sky-200 flex flex-col md:flex-row gap-6 items-center">
+            <div class="w-full md:w-1/3 aspect-[4/3] rounded-xl overflow-hidden shadow-md">
+              <img src="379547_0.jpg" alt="蟻人與黃蜂女射擊遊戲我超強" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full md:w-2/3 space-y-2">
+              <span class="text-xs font-bold text-red-800 bg-red-100 px-2.5 py-0.5 rounded-full inline-block">🎯 神射手戰績</span>
+              <h4 class="text-xl font-bold text-sky-950">蟻人與黃蜂女射擊遊戲 · 我超強！</h4>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                登上神盾局野戰車手握電磁脈衝槍瘋狂連擊，儀表板跳出 107,200 超高戰績！晚餐還在火箭餐廳吃了帥氣的蜘蛛人漢堡！
+              </p>
             </div>
           </div>
         </div>
 
-        <div class="bg-gradient-to-b from-indigo-900 to-slate-950 text-white rounded-3xl p-8 sm:p-10 shadow-2xl space-y-6">
+        <!-- 傍晚到夜間狂歡 (新補充 晚上啦 379594.jpg & 小小世界 379623.jpg) -->
+        <div class="bg-gradient-to-b from-indigo-900 to-slate-950 text-white rounded-3xl p-8 sm:p-10 shadow-2xl space-y-8">
           <div class="border-b border-indigo-800 pb-4">
             <span class="text-xs font-bold text-amber-400 bg-amber-500/20 px-3 py-1 rounded-full inline-block border border-amber-500/30">魔法夜間時刻</span>
-            <h3 class="text-2xl sm:text-3xl font-black font-disney text-white mt-2">魔法書房、花車遊行、小小世界與無人機煙火盛會 🎆</h3>
+            <h3 class="text-2xl sm:text-3xl font-black font-disney text-white mt-2">晚上啦！小小世界、魔法書房與煙火盛會 🎆</h3>
+            <p class="text-slate-300 text-sm mt-1">夜幕低垂，溫馨浪漫的彩燈點亮了整座夢幻樂園！</p>
           </div>
 
-          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-            欣賞震撼精采的<strong>迪士尼魔法書房秀</strong>，退場時<strong>青蛙公主蒂安娜與睡美人奧蘿拉公主竟然就從身旁優雅走過</strong>！一邊大口吃著爆米花一邊看著熱鬧非凡的花車遊行。
-          </p>
+          <div class="grid md:grid-cols-2 gap-6">
+            
+            <!-- 晚上啦 (新補充 379594.jpg) -->
+            <div class="rounded-2xl overflow-hidden border border-indigo-700/50 bg-indigo-950/60 flex flex-col group">
+              <div class="aspect-[3/4] overflow-hidden">
+                <img src="379594.jpg" alt="晚上啦" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              </div>
+              <div class="p-4 space-y-1">
+                <span class="text-xs font-bold text-amber-300 bg-amber-400/20 px-2.5 py-0.5 rounded-full inline-block">🌙 華燈初上</span>
+                <p class="font-bold text-white text-base">晚上啦！奔向魔法書房</p>
+                <p class="text-xs text-slate-300 leading-relaxed">天色漸暗，街燈如珍珠般亮起，拿著發光玩具快步奔向劇場！退場時青蛙公主蒂安娜與睡美人奧蘿拉公主更直接從身旁走過！</p>
+              </div>
+            </div>
 
-          <div class="grid sm:grid-cols-2 gap-4 text-sm text-slate-300">
-            <div class="p-4 bg-white/10 rounded-xl border border-white/10">
-              <span class="text-amber-300 font-bold block mb-1">🏰 夜光小鎮與小小世界</span>
-              夜幕低垂亮燈後，去玩了溫馨的小小世界，漫步欣賞夜間閃耀微光的艾倫代爾王國。
+            <!-- 小小世界 (新補充 379623.jpg) -->
+            <div class="rounded-2xl overflow-hidden border border-indigo-700/50 bg-indigo-950/60 flex flex-col group">
+              <div class="aspect-[3/4] overflow-hidden">
+                <img src="379623.jpg" alt="小小世界" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              </div>
+              <div class="p-4 space-y-1">
+                <span class="text-xs font-bold text-sky-300 bg-sky-400/20 px-2.5 py-0.5 rounded-full inline-block">🎶 經典遊船</span>
+                <p class="font-bold text-white text-base">小小世界 · 乘著小船看世界</p>
+                <p class="text-xs text-slate-300 leading-relaxed">搭乘水道小船穿梭在各國可愛人偶與世界音樂中，身邊處處是亮晶晶的童話城堡！</p>
+              </div>
             </div>
-            <div class="p-4 bg-white/10 rounded-xl border border-white/10">
-              <span class="text-amber-300 font-bold block mb-1">🌌 皮克斯無人機 ＆ 城堡煙火</span>
-              仰望夜空中皮克斯角色無人機群飛與震撼燦爛的城堡煙火，回飯店後再去泳池清涼暢游！
-            </div>
+
+          </div>
+
+          <div class="p-4 bg-white/10 rounded-2xl border border-white/10 text-center text-sm text-slate-200">
+            🌌 仰望夜空中皮克斯角色無人機群飛與震撼燦爛的城堡煙火，回飯店後再去泳池清涼暢游！
           </div>
         </div>
 
@@ -867,6 +986,7 @@
     </div>
   </section>
 
+  <!-- 3. 樂園第二天區 (Day 3 · 8/22 完整行程串連，含小飛象實拍 379629.jpg) -->
   <section id="day3" class="py-20 px-6 relative z-10">
     <div class="max-w-6xl mx-auto space-y-12">
       
@@ -875,7 +995,7 @@
           8月22日 · 歡樂延續
         </span>
         <h2 class="text-3xl sm:text-4xl font-black text-sky-950 font-disney">樂園第二天 · 開心深度暢玩</h2>
-        <p class="text-slate-600 text-sm sm:text-base">雨過天晴古堡探險、水花派對、唐老鴨黛絲簽名、分頭大挑戰、公主車專屬熱舞！</p>
+        <p class="text-slate-600 text-sm sm:text-base">雨過天晴古堡探險、水花派對、唐老鴨黛絲簽名、分頭大挑戰、小飛象與公主車熱舞！</p>
       </div>
 
       <div class="space-y-8">
@@ -900,33 +1020,48 @@
           </p>
         </div>
 
-        <div class="bg-gradient-to-r from-sky-50 to-amber-50 rounded-3xl p-8 border border-sky-200 shadow-xl space-y-6">
+        <!-- 各自的分頭探索 + 小飛象實拍 -->
+        <div class="bg-gradient-to-r from-sky-50 to-amber-50 rounded-3xl p-8 border border-sky-200 shadow-xl space-y-8">
           <h3 class="text-2xl font-black text-slate-800 font-disney">分頭探索精彩時光！各自滿足願望 🌟</h3>
           
           <div class="grid md:grid-cols-2 gap-6">
-            <div class="bg-white p-6 rounded-2xl border border-sky-200 shadow-sm space-y-2">
-              <span class="text-xs font-bold text-blue-700 bg-blue-100 px-3 py-1 rounded-full inline-block">Oliver 的探險清單</span>
-              <ul class="text-slate-600 text-sm space-y-1.5 pt-1">
-                <li>✨ 再玩一次最喜歡的「小小世界」</li>
-                <li>☕ 暢玩瘋狂旋轉的「瘋帽子旋轉杯」</li>
-                <li>🐘 乘著「小飛象」在天空中開心翱翔</li>
-              </ul>
+            
+            <!-- Oliver 的小飛象實拍 (新補充 379629.jpg) -->
+            <div class="bg-white p-6 rounded-2xl border border-sky-200 shadow-sm space-y-4">
+              <div class="aspect-[3/4] rounded-xl overflow-hidden shadow-sm group">
+                <img src="379629.jpg" alt="小飛象" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              </div>
+              <div class="space-y-2">
+                <span class="text-xs font-bold text-blue-700 bg-blue-100 px-3 py-1 rounded-full inline-block">Oliver 的探險清單</span>
+                <h4 class="font-bold text-sky-950 text-lg">🐘 小飛象乘風飛翔！</h4>
+                <ul class="text-slate-600 text-xs space-y-1">
+                  <li>✨ 再玩一次最喜歡的「小小世界」</li>
+                  <li>☕ 暢玩瘋狂旋轉的「瘋帽子旋轉杯」</li>
+                  <li>🐘 坐在戴著紫帽子的「小飛象」裡開心翱翔高空！</li>
+                </ul>
+              </div>
             </div>
 
-            <div class="bg-white p-6 rounded-2xl border border-pink-200 shadow-sm space-y-2">
-              <span class="text-xs font-bold text-pink-700 bg-pink-100 px-3 py-1 rounded-full inline-block">MinMin 的優雅時光</span>
-              <ul class="text-slate-600 text-sm space-y-1.5 pt-1">
-                <li>🍃 特別去跟風中奇緣「寶嘉康蒂」簽名愉快聊天</li>
-                <li>👑 專注觀賞華麗的迪士尼公主跳舞表演</li>
-                <li>🍯 在涼涼的小熊維尼專賣店等 Oliver 會合</li>
-              </ul>
+            <!-- MinMin 的公主與維尼時光 -->
+            <div class="bg-white p-6 rounded-2xl border border-pink-200 shadow-sm space-y-4 flex flex-col justify-between">
+              <div class="space-y-4">
+                <span class="text-xs font-bold text-pink-700 bg-pink-100 px-3 py-1 rounded-full inline-block">MinMin 的優雅時光</span>
+                <h4 class="font-bold text-pink-950 text-lg">👑 公主跳舞表演與等候會合</h4>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                  特別前去跟風中奇緣的「寶嘉康蒂」簽名聊天，隨後專注欣賞華麗優雅的迪士尼公主跳舞表演。表演結束後，坐在涼涼的小熊維尼專賣店舒服等候會合！
+                </p>
+              </div>
+              <div class="p-4 bg-pink-50 rounded-xl border border-pink-100 text-xs text-pink-800">
+                🍯 隨後會合一起坐上維尼蜂蜜罐探險、再搭了一次浪漫旋轉木馬！
+              </div>
             </div>
+
           </div>
 
           <div class="p-5 bg-white/90 rounded-2xl border border-amber-300 space-y-2">
             <h4 class="text-lg font-bold text-amber-950">💃 壓軸驚喜：公主花車在面前停駐旋轉跳舞！</h4>
             <p class="text-slate-600 text-sm leading-relaxed">
-              會合後一起去玩了<strong>小熊維尼歷險之旅蜂蜜罐</strong>，再坐了一次夢幻的<strong>旋轉木馬</strong>。傍晚在城堡前等花車遊行時，<strong>整台華麗的公主車竟然不偏不倚停在眼前不停旋轉跳舞</strong>！孩子們看得目眩神迷，晚上再回飯店跳進泳池清涼游泳！
+              傍晚在城堡前等花車遊行時，<strong>整台華麗的公主車竟然不偏不倚停在眼前不停旋轉跳舞</strong>！大家看得目眩神迷，晚上再回飯店跳進泳池清涼游泳！
             </p>
           </div>
         </div>
@@ -935,6 +1070,7 @@
     </div>
   </section>
 
+  <!-- 4. 返程區 (Day 4 · 8/23 完整行程串連) -->
   <section id="day4" class="py-20 px-6 relative z-10">
     <div class="max-w-6xl mx-auto bg-white/90 backdrop-blur-md rounded-3xl p-8 sm:p-12 border border-white shadow-2xl space-y-10">
       
@@ -946,6 +1082,7 @@
         <p class="text-slate-600 text-sm sm:text-base">早起米妮簽名、三間飯店皮克斯 DIY 全集滿、高飛簽名、迷宮探險與班機延遲的小幸運！</p>
       </div>
 
+      <!-- 三大飯店探索清單 -->
       <div class="grid md:grid-cols-3 gap-6">
         
         <div class="bg-sky-50/70 p-6 rounded-2xl border border-sky-100 space-y-2">
@@ -982,10 +1119,12 @@
     </div>
   </section>
 
+  <!-- 頁尾 -->
   <footer class="py-12 text-center text-sky-900/60 text-xs font-semibold relative z-10">
     <p>© 2026 MinMin & Oliver 's lovly adventure. All Rights Reserved.</p>
   </footer>
 
+  <!-- 泡泡生成與滑鼠互動腳本 -->
   <script>
     // 1. 自動持續生成背景七彩大泡泡
     const bubbleContainer = document.getElementById('bubble-container');
@@ -993,12 +1132,12 @@
       const bubble = document.createElement('div');
       bubble.className = 'bubble';
       
-      const size = Math.random() * 70 + 35;
+      const size = Math.random() * 70 + 35; // 泡泡尺寸 35px ~ 105px
       bubble.style.width = size + 'px';
       bubble.style.height = size + 'px';
       bubble.style.left = (Math.random() * 100) + 'vw';
       
-      const duration = Math.random() * 8 + 7;
+      const duration = Math.random() * 8 + 7; // 飄浮時間 7s ~ 15s
       bubble.style.animationDuration = duration + 's';
       
       bubbleContainer.appendChild(bubble);
