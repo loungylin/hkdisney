@@ -5,112 +5,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MinMin 與 Oliver 的香港迪士尼冒險 - Day 1</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Noto SansTC', sans-serif; background-color: #f8fafc; color: #1e293b; }
-        .polaroid { background: white; padding: 12px 12px 35px 12px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); transform: rotate(-1deg); transition: transform 0.3s ease; }
-        .polaroid:nth-child(even) { transform: rotate(1.5deg); }
-        .polaroid:hover { transform: scale(1.02) rotate(0deg); z-index: 10; }
+        body { 
+            font-family: 'Noto Sans TC', sans-serif; 
+            background: linear-gradient(135deg, #fdf4ff 0%, #e0f2fe 50%, #fef3c7 100%);
+            color: #1e293b; 
+            min-height: 100vh;
+        }
+        .font-fun { font-family: 'Fredoka', 'Noto Sans TC', sans-serif; }
+        .polaroid { 
+            background: white; 
+            padding: 12px 12px 40px 12px; 
+            box-shadow: 0 15px 35px -5px rgba(236, 72, 153, 0.15), 0 10px 15px -5px rgba(0, 0, 0, 0.05); 
+            transform: rotate(-1.5deg); 
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 2px solid #fce7f3;
+        }
+        .polaroid:nth-child(even) { transform: rotate(2deg); border-color: #e0f2fe; }
+        .polaroid:hover { transform: scale(1.04) rotate(0deg); z-index: 10; box-shadow: 0 20px 40px -5px rgba(147, 51, 234, 0.25); }
+        .magic-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.8);
+        }
     </style>
 </head>
-<body class="bg-slate-50 min-h-screen pb-20">
+<body class="pb-24">
 
-    <!-- 頁首標題 -->
-    <header class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white py-12 px-6 text-center shadow-lg mb-12">
-        <span class="bg-white/20 text-xs uppercase tracking-widest px-3 py-1 rounded-full font-semibold">Day 1 啟航篇</span>
-        <h1 class="text-3xl md:text-5xl font-black mt-3 mb-2 tracking-wide">香港迪士尼冒險之旅</h1>
-        <p class="text-white/90 text-sm md:text-base">115/8/20 桃園機場 ➔ 香港好萊塢酒店</p>
+    <!-- 夢幻童趣頁首 -->
+    <header class="relative overflow-hidden bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 text-white py-16 px-6 text-center shadow-xl mb-16 rounded-b-[3rem]">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="relative z-10 max-w-2xl mx-auto space-y-3">
+            <span class="inline-block bg-white/30 backdrop-blur-md text-white text-xs uppercase tracking-widest px-4 py-1.5 rounded-full font-bold font-fun shadow-sm">
+                ✨ Day 1 啟航篇 ✨
+            </span>
+            <h1 class="text-4xl md:text-6xl font-black font-fun tracking-wide drop-shadow-md">
+                香港迪士尼冒險之旅
+            </h1>
+            <p class="text-white/95 text-base md:text-lg font-medium">
+                115/8/20 桃園機場 ➔ 香港好萊塢酒店
+            </p>
+        </div>
     </header>
 
-    <main class="max-w-5xl mx-auto px-4 space-y-16">
+    <main class="max-w-5xl mx-auto px-4 space-y-20">
 
-        <!-- 區塊一：出發與候機（輕鬆日常） -->
+        <!-- 區塊一：出發與候機 -->
         <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div class="bg-white p-4 rounded-2xl shadow-md border border-slate-100 hover:shadow-xl transition">
-                <img src="image_0.png" alt="出國前必拍" class="w-full h-72 object-cover rounded-xl mb-4">
-                <p class="text-center font-bold text-slate-700 text-lg">跟臺灣合照的儀式感！香港之旅要開始囉！</p>
+            <div class="magic-card p-5 rounded-3xl shadow-lg hover:shadow-2xl transition duration-300">
+                <img src="379103_0.jpg" alt="出國前必拍" class="w-full h-80 object-cover rounded-2xl mb-4 shadow-sm">
+                <p class="text-center font-bold text-slate-700 text-lg font-fun">跟臺灣合照的儀式感！香港之旅要開始囉！</p>
             </div>
-            <div class="bg-white p-4 rounded-2xl shadow-md border border-slate-100 hover:shadow-xl transition md:-translate-y-6">
-                <img src="image_1.png" alt="玩媽媽說" class="w-full h-72 object-cover rounded-xl mb-4">
-                <p class="text-center font-bold text-slate-700 text-lg">在候機室玩「媽媽說」MinMin 和 Oliver 都超反應超快好厲害~</p>
+            <div class="magic-card p-5 rounded-3xl shadow-lg hover:shadow-2xl transition duration-300 md:-translate-y-4">
+                <img src="379585.jpg" alt="玩媽媽說" class="w-full h-80 object-cover rounded-2xl mb-4 shadow-sm">
+                <p class="text-center font-bold text-slate-700 text-lg font-fun">在候機室玩「媽媽說」MinMin 和 Oliver 都超反應超快好厲害~</p>
             </div>
         </section>
 
-        <!-- 區塊二：起飛與抵達（滿版焦點橫幅） -->
-        <section class="bg-slate-900 text-white rounded-3xl overflow-hidden shadow-2xl grid grid-cols-1 md:grid-cols-2">
+        <!-- 區塊二：起飛與抵達（魔法橫幅） -->
+        <section class="bg-gradient-to-r from-slate-900 via-indigo-950 to-purple-950 text-white rounded-[2.5rem] overflow-hidden shadow-2xl grid grid-cols-1 md:grid-cols-2 border-4 border-purple-300/30">
             <div class="relative h-72 md:h-auto">
-                <img src="image_2.png" alt="好興奮要起飛啦" class="w-full h-full object-cover">
-                <span class="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full text-xs font-medium">起飛瞬間</span>
+                <img src="379104_0.jpg" alt="好興奮要起飛啦" class="w-full h-full object-cover">
+                <span class="absolute top-4 left-4 bg-pink-500/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold font-fun">🚀 起飛瞬間</span>
             </div>
-            <div class="p-8 flex flex-col justify-center space-y-4">
-                <h3 class="text-2xl font-black text-pink-400">衝上雲霄！</h3>
-                <p class="text-slate-300 text-lg leading-relaxed">好興奮要起飛啦！帶著期待又緊張的心情，我們的旅程正式起航。</p>
-                <div class="pt-4 border-t border-slate-800 flex items-center space-x-4">
-                    <img src="image_3.png" alt="抵達香港" class="w-16 h-16 rounded-full object-cover border-2 border-pink-400">
+            <div class="p-8 md:p-12 flex flex-col justify-center space-y-4">
+                <h3 class="text-3xl font-black font-fun text-pink-300">衝上雲霄！</h3>
+                <p class="text-slate-200 text-lg leading-relaxed">好興奮要起飛啦！帶著期待又緊張的心情，我們的旅程正式起航。</p>
+                <div class="pt-4 border-t border-purple-800/60 flex items-center space-x-4">
+                    <img src="379105_0.jpg" alt="抵達香港" class="w-16 h-16 rounded-full object-cover border-4 border-pink-400 shadow-md">
                     <div>
-                        <p class="font-bold">抵達香港</p>
-                        <p class="text-xs text-slate-400">空橋上的勝利歡呼！</p>
+                        <p class="font-bold font-fun text-lg">抵達香港</p>
+                        <p class="text-xs text-pink-300 font-medium">空橋上的勝利歡呼！</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 區塊三：交通移動特輯（左右並排卡片） -->
+        <!-- 區塊三：交通移動特輯 -->
         <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-white p-5 rounded-2xl shadow-md border border-slate-100">
-                <img src="image_4.png" alt="機場捷運第一排" class="w-full h-64 object-cover rounded-xl mb-4">
-                <div class="flex items-center space-x-2 text-indigo-600 font-bold mb-1">
+            <div class="magic-card p-6 rounded-3xl shadow-lg">
+                <img src="379587.jpg" alt="機場捷運第一排" class="w-full h-72 object-cover rounded-2xl mb-4 shadow-sm">
+                <div class="flex items-center space-x-2 text-indigo-600 font-bold font-fun text-lg mb-1">
                     <span>🚇</span><span>機場捷運第一排</span>
                 </div>
-                <p class="text-slate-600 text-sm">緊貼窗邊鎖定前方視角，窗外風景全收眼底！</p>
+                <p class="text-slate-600 text-base">緊貼窗邊鎖定前方視角，窗外風景全收眼底！</p>
             </div>
-            <div class="bg-white p-5 rounded-2xl shadow-md border border-slate-100">
-                <img src="image_5.png" alt="雙層巴士第一排" class="w-full h-64 object-cover rounded-xl mb-4">
-                <div class="flex items-center space-x-2 text-purple-600 font-bold mb-1">
+            <div class="magic-card p-6 rounded-3xl shadow-lg">
+                <img src="379586.jpg" alt="雙層巴士第一排" class="w-full h-72 object-cover rounded-2xl mb-4 shadow-sm">
+                <div class="flex items-center space-x-2 text-purple-600 font-bold font-fun text-lg mb-1">
                     <span>🚌</span><span>雙層巴士第一排</span>
                 </div>
-                <p class="text-slate-600 text-sm">坐在頂層最前端，用最棒的視野穿梭香港街頭。</p>
+                <p class="text-slate-600 text-base">坐在頂層最前端，用最棒的視野穿梭香港街頭。</p>
             </div>
         </section>
 
         <!-- 區塊四：東涌 Outlet 逛街突擊 -->
-        <section class="bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-3xl p-8 shadow-xl flex flex-col md:flex-row items-center gap-8">
+        <section class="bg-gradient-to-r from-pink-500 via-rose-500 to-orange-400 text-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl flex flex-col md:flex-row items-center gap-8 border-4 border-white/40">
             <div class="w-full md:w-1/2">
-                <img src="image_6.png" alt="東涌outlet採買" class="w-full h-72 object-cover rounded-2xl shadow-lg">
+                <img src="379106_0.jpg" alt="東涌outlet採買" class="w-full h-80 object-cover rounded-2xl shadow-xl">
             </div>
             <div class="w-full md:w-1/2 space-y-4">
-                <span class="bg-white/20 text-xs px-3 py-1 rounded-full font-semibold">美食與採買</span>
-                <h3 class="text-3xl font-black">東涌 Outlet 瘋狂採買</h3>
-                <p class="text-white/90 text-lg">吃飽喝足、買好接下來幾天的糧食與點心，充滿電準備進飯店！</p>
+                <span class="inline-block bg-white/25 backdrop-blur-md text-xs px-3.5 py-1.5 rounded-full font-bold font-fun">🛍️ 美食與採買</span>
+                <h3 class="text-3xl md:text-4xl font-black font-fun">東涌 Outlet 瘋狂採買</h3>
+                <p class="text-white/95 text-lg leading-relaxed">吃飽喝足、買好接下來幾天的糧食與點心，充滿電準備進飯店！</p>
             </div>
         </section>
 
-        <!-- 區塊五：好萊塢酒店與夜晚時光（拍立得風格三連發） -->
-        <section class="space-y-6">
-            <div class="text-center">
-                <h3 class="text-2xl font-black text-slate-800">入住香港迪士尼好萊塢酒店</h3>
-                <p class="text-slate-500 text-sm mt-1">華麗的迎賓與歡樂的遊戲室夜晚</p>
+        <!-- 區塊五：好萊塢酒店與夜晚時光（拍立得風格） -->
+        <section class="space-y-8 pt-4">
+            <div class="text-center space-y-2">
+                <h3 class="text-3xl font-black font-fun text-slate-800">✨ 入住香港迪士尼好萊塢酒店 ✨</h3>
+                <p class="text-slate-500 text-base font-medium">華麗的迎賓與歡樂的遊戲室夜晚</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-4">
-                <div class="polaroid">
-                    <img src="image_7.png" alt="抵達好萊塢酒店囉" class="w-full h-56 object-cover mb-3">
-                    <p class="text-center font-bold text-slate-700 text-sm">抵達好萊塢酒店囉！</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-2">
+                <div class="polaroid rounded-2xl">
+                    <img src="379107_0.jpg" alt="抵達好萊塢酒店囉" class="w-full h-64 object-cover rounded-xl mb-3 shadow-sm">
+                    <p class="text-center font-bold text-slate-700 text-base font-fun">抵達好萊塢酒店囉！</p>
                 </div>
-                <div class="polaroid">
-                    <img src="image_8.png" alt="迎賓micky" class="w-full h-56 object-cover mb-3">
-                    <p class="text-center font-bold text-slate-700 text-sm">迎賓米奇，超嗨合照！</p>
+                <div class="polaroid rounded-2xl">
+                    <img src="379551.jpg" alt="迎賓micky" class="w-full h-64 object-cover rounded-xl mb-3 shadow-sm">
+                    <p class="text-center font-bold text-slate-700 text-base font-fun">迎賓米奇，超嗨合照！</p>
                 </div>
-                <div class="polaroid">
-                    <img src="image_9.png" alt="遊戲室打地鼠蛙蛙" class="w-full h-56 object-cover mb-3">
-                    <p class="text-center font-bold text-slate-700 text-sm">遊戲室打地鼠蛙蛙超紓壓！</p>
+                <div class="polaroid rounded-2xl">
+                    <img src="379109_0.jpg" alt="遊戲室打地鼠蛙蛙" class="w-full h-64 object-cover rounded-xl mb-3 shadow-sm">
+                    <p class="text-center font-bold text-slate-700 text-base font-fun">遊戲室打地鼠蛙蛙超紓壓！</p>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="text-center text-slate-400 text-xs mt-20">
-        <p>© MinMin & Oliver's Hong Kong Disneyland Adventure</p>
+    <footer class="text-center text-slate-500 text-sm mt-24 font-fun">
+        <p>🌟 MinMin & Oliver's Hong Kong Disneyland Adventure 🌟</p>
     </footer>
 
 </body>
