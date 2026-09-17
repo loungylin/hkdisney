@@ -29,6 +29,24 @@
             backdrop-filter: blur(10px);
             border: 2px solid rgba(255, 255, 255, 0.8);
         }
+        /* 斜切三角形特效容器 */
+        .diagonal-split {
+            position: relative;
+            width: 100%;
+            height: 320px;
+            overflow: hidden;
+            border-radius: 1.5rem;
+        }
+        .diagonal-left {
+            position: absolute;
+            inset: 0;
+            clip-path: polygon(0 0, 100% 0, 0 100%);
+        }
+        .diagonal-right {
+            position: absolute;
+            inset: 0;
+            clip-path: polygon(100% 0, 100% 100%, 0 100%);
+        }
     </style>
 </head>
 <body class="pb-24">
@@ -70,22 +88,20 @@
                 </div>
             </div>
 
-            <!-- 起飛與抵達 -->
-            <div class="bg-gradient-to-r from-slate-900 via-indigo-950 to-purple-950 text-white rounded-[2.5rem] overflow-hidden shadow-2xl grid grid-cols-1 md:grid-cols-2 border-4 border-purple-300/30">
-                <div class="relative h-72 md:h-auto">
-                    <img src="379104_0.jpg" alt="好興奮要起飛啦" class="w-full h-full object-cover">
-                    <span class="absolute top-4 left-4 bg-pink-500/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold font-fun">🚀 起飛瞬間</span>
+            <!-- 起飛與抵達（改用斜切三角雙圖呈現） -->
+            <div class="bg-gradient-to-r from-slate-900 via-indigo-950 to-purple-950 text-white rounded-[2.5rem] overflow-hidden shadow-2xl grid grid-cols-1 md:grid-cols-2 border-4 border-purple-300/30 items-center">
+                <div class="diagonal-split m-4 md:m-6">
+                    <div class="diagonal-left">
+                        <img src="379104_0.jpg" alt="好興奮要起飛啦" class="w-full h-full object-cover">
+                    </div>
+                    <div class="diagonal-right">
+                        <img src="379105_0.jpg" alt="抵達香港" class="w-full h-full object-cover">
+                    </div>
                 </div>
                 <div class="p-8 md:p-12 flex flex-col justify-center space-y-4">
-                    <h3 class="text-3xl font-black font-fun text-pink-300">衝上雲霄！</h3>
-                    <p class="text-slate-200 text-lg leading-relaxed">好興奮要起飛啦！帶著期待又緊張的心情，我們的旅程正式起航。</p>
-                    <div class="pt-4 border-t border-purple-800/60 flex items-center space-x-4">
-                        <img src="379105_0.jpg" alt="抵達香港" class="w-16 h-16 rounded-full object-cover border-4 border-pink-400 shadow-md">
-                        <div>
-                            <p class="font-bold font-fun text-lg">抵達香港</p>
-                            <p class="text-xs text-pink-300 font-medium">空橋上的勝利歡呼！</p>
-                        </div>
-                    </div>
+                    <span class="bg-pink-500/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold font-fun w-max">🚀 起飛與抵達</span>
+                    <h3 class="text-3xl font-black font-fun text-pink-300">衝上雲霄！抵達香港</h3>
+                    <p class="text-slate-200 text-lg leading-relaxed">帶著期待又緊張的心情起航，空橋上的勝利歡呼，我們的旅程正式展開！</p>
                 </div>
             </div>
 
@@ -144,17 +160,17 @@
 
         <div class="border-t-2 border-purple-200 my-16"></div>
 
-        <!-- ==================== PART 2: 樂園第一天（完整全紀錄） ==================== -->
+        <!-- ==================== PART 2: 樂園第一天 ==================== -->
         <section class="space-y-16">
             <div class="text-center">
                 <span class="bg-sky-100 text-sky-700 px-4 py-1 rounded-full text-sm font-bold font-fun">樂園第一天</span>
                 <h2 class="text-3xl font-black font-fun mt-2 text-slate-800">迪士尼樂園奇幻冒險</h2>
             </div>
 
-            <!-- 1. 刷牙照開頭 -->
+            <!-- 1. 刷牙照開頭（修正切頭問題，object-position: top） -->
             <section class="max-w-xl mx-auto">
                 <div class="magic-card p-6 rounded-3xl shadow-xl text-center">
-                    <img src="379588.jpg" alt="早起刷刷牙，準備出發囉" class="w-full h-80 object-cover rounded-2xl mb-4 shadow-sm">
+                    <img src="379588.jpg" alt="早起刷刷牙，準備出發囉" class="w-full h-80 object-cover object-top rounded-2xl mb-4 shadow-sm">
                     <div class="flex items-center justify-center space-x-2 text-sky-600 font-bold font-fun text-xl mb-1">
                         <span>🪥</span><span>早起刷刷牙，準備出發囉！</span>
                     </div>
@@ -174,22 +190,20 @@
                 </div>
             </section>
 
-            <!-- 3. Frozen 園區 -->
-            <section class="bg-gradient-to-r from-cyan-900 via-sky-950 to-indigo-950 text-white rounded-[2.5rem] overflow-hidden shadow-2xl grid grid-cols-1 md:grid-cols-2 border-4 border-cyan-300/30">
-                <div class="relative h-72 md:h-auto">
-                    <img src="379534_0.jpg" alt="提早入園frozen園區" class="w-full h-full object-cover">
-                    <span class="absolute top-4 left-4 bg-cyan-500/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold font-fun">❄️ Frozen 園區</span>
+            <!-- 3. Frozen 園區（改用斜切三角雙圖展示入口與魔雪奇幻之旅） -->
+            <section class="bg-gradient-to-r from-cyan-900 via-sky-950 to-indigo-950 text-white rounded-[2.5rem] overflow-hidden shadow-2xl grid grid-cols-1 md:grid-cols-2 border-4 border-cyan-300/30 items-center">
+                <div class="diagonal-split m-4 md:m-6">
+                    <div class="diagonal-left">
+                        <img src="379534_0.jpg" alt="Frozen 園區" class="w-full h-full object-cover">
+                    </div>
+                    <div class="diagonal-right">
+                        <img src="379536_0.jpg" alt="魔雪奇幻之旅" class="w-full h-full object-cover">
+                    </div>
                 </div>
                 <div class="p-8 md:p-12 flex flex-col justify-center space-y-4">
-                    <h3 class="text-3xl font-black font-fun text-cyan-300">提早入園衝最熱門！</h3>
-                    <p class="text-slate-200 text-lg leading-relaxed">直奔最熱門的 Frozen 園區，展開奇幻冒險。</p>
-                    <div class="pt-4 border-t border-cyan-800/60 flex items-center space-x-4">
-                        <img src="379536_0.jpg" alt="魔雪奇幻之旅" class="w-16 h-16 rounded-full object-cover border-4 border-cyan-400 shadow-md">
-                        <div>
-                            <p class="font-bold font-fun text-lg">魔雪奇幻之旅超棒</p>
-                            <p class="text-xs text-cyan-300 font-medium">let~it~go~~~~ 🎶</p>
-                        </div>
-                    </div>
+                    <span class="bg-cyan-500/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold font-fun w-max">❄️ Frozen 園區</span>
+                    <h3 class="text-3xl font-black font-fun text-cyan-300">魔雪奇幻之旅超棒！</h3>
+                    <p class="text-slate-200 text-lg leading-relaxed">提早入園直奔最熱門的 Frozen 園區，一起高唱 let~it~go~~~~ 🎶</p>
                 </div>
             </section>
 
@@ -275,7 +289,7 @@
                 </div>
 
                 <!-- 壓軸公主與影片 -->
-                <div class="bg-gradient-to-r from-purple-900 via-pink-950 to-rose-950 text-white rounded-[2.5rem] overflow-hidden shadow-2xl grid grid-cols-1 md:grid-cols-2 border-4 border-pink-300/30">
+                <div class="bg-gradient-to-r from-purple-900 via-pink-950 to-rose-950 text-white rounded-[2.5rem] overflow-hidden shadow-2xl grid grid-cols-1 md:grid-cols-2 border-4 border-pink-300/30 items-center">
                     <div class="relative h-72 md:h-auto">
                         <img src="379908_0.jpg" alt="超美公主壓軸" class="w-full h-full object-cover">
                         <span class="absolute top-4 left-4 bg-pink-500/85 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold font-fun">👑 完美壓軸</span>
@@ -293,9 +307,10 @@
                     </div>
                     <p class="text-slate-600 text-base">記錄遊行當下最震撼歡樂的時刻！</p>
                 </div>
+
             </section>
 
-            <!-- 5. 晚間精彩壓軸（猜拳、蜘蛛人、小小世界、夜間艾倫岱爾、無人機秀與飯店玩水） -->
+            <!-- 5. 晚間精彩壓軸（包含猜拳、蜘蛛人、小小世界、夜間艾倫岱爾、拒絕小孩與無人機秀、飯店玩水） -->
             <section class="space-y-8">
                 <div class="text-center">
                     <h3 class="text-3xl font-black font-fun text-slate-800">🌙 浪漫夜間與無人機奇幻秀 🎇</h3>
@@ -324,9 +339,10 @@
                     </div>
                 </div>
 
+                <!-- 拒絕了再一次 Let It Go 的小孩兒們（使用 object-contain 確保右下角小孩不被切掉） -->
                 <div class="max-w-xl mx-auto">
                     <div class="magic-card p-6 rounded-3xl shadow-xl text-center">
-                        <img src="379644_0.jpg" alt="拒絕了再一次let it go的小孩兒們" class="w-full h-80 object-cover rounded-2xl mb-4 shadow-sm">
+                        <img src="379644_0.jpg" alt="拒絕了再一次let it go的小孩兒們" class="w-full h-80 object-contain rounded-2xl mb-4 shadow-sm bg-slate-900/5">
                         <p class="text-center font-bold text-slate-700 text-lg font-fun">拒絕了再一次 Let It Go 的小孩兒們 😂❄️</p>
                     </div>
                 </div>
